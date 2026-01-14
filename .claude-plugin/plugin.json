@@ -1,0 +1,10 @@
+{
+  "name": "gx-arch-review",
+  "description": "Code review commands for Galaxy codebase contributions",
+  "version": "0.1.0",
+  "author": {
+    "name": "Galaxy Project"
+  },
+  "repository": "https://github.com/galaxyproject/gx-arch-review",
+  "license": "MIT"
+}
