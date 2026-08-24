@@ -4,7 +4,7 @@ Perform a Python code review on the provided code. Accept input in any of follow
 3. A list of Python file paths (analyze those files)
 4. A planning document (analyze the Python files in the plan)    
 
-Review the code focusing on these two criteria:
+Review the code focusing on these three criteria:
 
 **1. Type Annotations**
 - Methods and functions should have type annotations on parameters and return types
@@ -19,11 +19,18 @@ Review the code focusing on these two criteria:
 - Flag any inline imports without explanation and move them to the top
 - Don't reorganize import groups - isort handles that
 
+**3. Comment and Docstring Placement**
+- Docstrings describe the caller-facing contract: purpose, parameters, return value, raised exceptions, and durable behavior a caller needs to know
+- Do not put explanations of local control flow, internal collaborators, or implementation choices in docstrings
+- If implementation rationale is necessary, put a concise inline comment beside the relevant statement or branch; omit it when the code is already clear
+- Flag implementation details in docstrings and recommend moving only the necessary rationale inline
+
 **Output Format:**
 For each file reviewed, provide:
 - **File**: filename
 - **Typing Issues**: List missing or problematic type annotations (or "None" if clear)
 - **Import Issues**: List inline imports found and moved (or "None" if correct)
+- **Comment Issues**: List misplaced implementation details in docstrings (or "None" if correct)
 - **Summary**: Brief assessment of the file's adherence to standards
 
 At the end, provide:

@@ -61,6 +61,7 @@ Reviews Python code for:
 - Missing type annotations on public methods
 - Inline imports without justification comments
 - Import organization issues
+- Caller-facing docstrings without implementation-detail commentary
 
 ### py-challenge-patches
 
